@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     <nav>
       <Link to="/">Home</Link> |<Link to="/sample01">Sample01</Link> |
       <Link to="/ex30">Ex30</Link>|<Link to="/ex50">Ex50</Link>|
-      {/* Add more links as needed */}
+      <Link to="/ex60">Ex60</Link>|
     </nav>
   );
 };

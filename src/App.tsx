@@ -6,6 +6,7 @@ import Sample01 from "./pages/Sample01";
 import Myname from "./components/Myname";
 import Ex30 from "./pages/Ex30";
 import Ex50 from "./pages/Ex50";
+import Ex60 from "./pages/Ex60";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="/sample01" element={<Sample01 />} />
           <Route path="/ex30" element={<Ex30 />} />
           <Route path="/ex50" element={<Ex50 />} />
-          {/* Add more routes as needed */}
+          <Route path="/ex60" element={<Ex60 />} />
         </Routes>
       </div>
     </Router>
