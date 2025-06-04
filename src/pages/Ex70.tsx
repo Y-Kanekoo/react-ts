@@ -10,11 +10,9 @@ const Ex70: React.FC = () => {
   const [isSex, setIsSex] = useState<string>(sexOptions.man); //性別
   const [hobbies, setIsHobbies] = useState<string[]>([hobbyOptions.swim]); //趣味
   const [isLikewords, setIsLikewords] = useState<string[]>([]); //好きな言葉
-  //   const [isOther, setIsOther] = useState<string>(""); //その他
-  // const [isRobbot, setIsRobot] = useState<boolean>(false); //ロボット
-  // const [isSubmit, setIsSubmit] = useState<boolean>(false); //送信ボタン
+  const [others, setOthers] = useState<string>(""); //その他
+  const [Robbot, setIsRobot] = useState<boolean>(false); //ロボット
 
-  // const [isSubmit, setIsSubmit] = useState<boolean>(false); //送信ボタン
   const handleClickLastName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLastName(event.target.value);
   };
@@ -54,32 +52,22 @@ const Ex70: React.FC = () => {
 
   // 好きな言葉の選択を受け付ける関数
   const handleChangeLikewords = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    const value = event.target.value;
-    setIsLikewords((prev) => {
-      if (prev.includes(value)) {
-        return prev.filter((word) => word !== value); // 既に選択されている場合は削除
-      } else {
-        return [...prev, value]; // 新しい言葉を追加
-      }
-    });
+    const selected = Array.from(
+      event.target.selectedOptions,
+      (option) => option.value
+    );
+    setIsLikewords(selected);
   };
-  //   その他の入力を受け付ける関数;
-  //   const handleChangeOther = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setIsOther(event.target.value);
-  //   };
-  //   // ロボットのチェックボックスの変更を受け付ける関数
-  //   const handleChangeRobot = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setIsRobot(event.target.checked);
-  //   };
 
-  //   // 送信ボタンのクリックを受け付ける関数
-  //   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //     event.preventDefault(); // フォームのデフォルトの送信を防ぐ
-  //     setIsSubmit(true); // 送信ボタンがクリックされたことを記録
-  //     // ここで送信処理を行うことができます
-  //   };
+  const handleChangeOther = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setOthers(event.target.value);
+  };
+
+  const handleChangeRobot = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsRobot(event.target.checked);
+  };
 
   return (
     <div>
@@ -195,21 +183,45 @@ const Ex70: React.FC = () => {
         </div>
         <div>
           好きな言葉：
-          {LikeWords.map((word) => (
-            <span key={word}>
-              <input
-                type="checkbox"
-                name="likewords"
-                value={word}
-                checked={isLikewords.includes(word)}
-                onChange={handleChangeLikewords}
-              />
-              {word}
-            </span>
-          ))}
-          / チェックした好きな言葉 : {isLikewords.join(", ")}
+          <select multiple value={isLikewords} onChange={handleChangeLikewords}>
+            {LikeWords.map((word) => (
+              <option key={word} value={word}>
+                {word}
+              </option>
+            ))}
+          </select>
+          / 選択した好きな言葉 : {isLikewords.join(", ")}
           <br />
           <hr />
+        </div>
+        <div>
+          その他：
+          <textarea
+            name="others"
+            id="others"
+            value={others}
+            onChange={handleChangeOther}
+          />
+          / 入力したその他 : {others}
+          <br />
+          <hr />
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="robbot"
+              id="robbot"
+              checked={Robbot}
+              onChange={handleChangeRobot}
+            />
+            私はロボットではありません。
+          </label>
+          <br />
+          <hr />
+          <button type="submit" disabled={!Robbot}>
+            送信
+          </button>
         </div>
       </form>
     </div>

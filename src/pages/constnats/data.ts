@@ -10,29 +10,4 @@ export const hobbyOptions = {
   run: "ランニング",
 };
 
-export const LikeWords = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "GraphQL",
-  "Apollo",
-  "Redux",
-  "Vue.js",
-  "Angular",
-  "Svelte",
-  "Tailwind CSS",
-  "Bootstrap",
-  "Material-UI",
-  "Ant Design",
-  "Chakra UI",
-  "Styled Components",
-  "Emotion",
-  "CSS-in-JS",
-  "WebAssembly",
-  "Progressive Web Apps (PWA)",
-  "Serverless",
-];
+export const LikeWords = ["JavaScript", "TypeScript", "Java", "Python"];
