@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Sample01 from "./pages/Sample01";
 import S216CountUp from "./pages/sample/S216countUp";
+import S220FetchEmployeeList from "./pages/sample/S220fetchEmployeeList";
 import Ex30 from "./pages/Ex30";
 import Ex50 from "./pages/Ex50";
 import Ex60 from "./pages/Ex60";
@@ -24,6 +25,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sample01" element={<Sample01 />} />
           <Route path="s216countup" element={<S216CountUp />} />
+          <Route
+            path="/s220fetchEmployeeList"
+            element={<S220FetchEmployeeList />}
+          />
+
           <Route path="/ex30" element={<Ex30 />} />
           <Route path="/ex50" element={<Ex50 />} />
           <Route path="/ex60" element={<Ex60 />} />
