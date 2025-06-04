@@ -12,6 +12,7 @@ import Ex80 from "./pages/Ex80";
 import Ex90 from "./pages/Ex90";
 // import Ex100 from "./pages/Ex100";
 import Ex130 from "./pages/Ex130";
+import Ex140 from "./pages/Ex140"; // Uncomment if you want to use Ex140
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/ex90" element={<Ex90 />} />
           {/* <Route path="/ex100" element={<Ex100 />} /> */}
           <Route path="/ex130" element={<Ex130 />} />
+          <Route path="/ex140" element={<Ex140 />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>
