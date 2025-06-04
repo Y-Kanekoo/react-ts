@@ -7,6 +7,9 @@ import Ex30 from "./pages/Ex30";
 import Ex50 from "./pages/Ex50";
 import Ex60 from "./pages/Ex60";
 import Ex70 from "./pages/Ex70";
+import Ex80 from "./pages/Ex80";
+import Ex90 from "./pages/Ex90";
+// import Ex100 from "./pages/Ex100";
 
 function App() {
   return (
@@ -20,8 +23,8 @@ function App() {
           <Route path="/ex50" element={<Ex50 />} />
           <Route path="/ex60" element={<Ex60 />} />
           <Route path="/ex70" element={<Ex70 />} />
-          {/* <Route path="/ex80" element={<Ex80 />} /> */}
-          {/* <Route path="/ex90" element={<Ex90 />} /> */}
+          <Route path="/ex80" element={<Ex80 />} />
+          <Route path="/ex90" element={<Ex90 />} />
           {/* <Route path="/ex100" element={<Ex100 />} /> */}
         </Routes>
       </div>
