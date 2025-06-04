@@ -12,7 +12,6 @@ const CompYes: React.FC<CompYesProps> = ({ onYes }) => {
   };
   return (
     <div>
-      押したボタン：ボタンを押してください
       <br />
       <button onClick={handleYes}>Yes</button>
     </div>

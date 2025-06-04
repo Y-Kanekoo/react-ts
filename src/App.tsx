@@ -15,6 +15,7 @@ import Ex90 from "./pages/Ex90";
 import Ex130 from "./pages/Ex130";
 import Ex140 from "./pages/Ex140";
 import Ex170 from "./pages/Ex170";
+import Ex180 from "./pages/Ex180";
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
           <Route path="/ex130" element={<Ex130 />} />
           <Route path="/ex140" element={<Ex140 />} />
           <Route path="/ex170" element={<Ex170 />} />
-
+          <Route path="/ex180" element={<Ex180 />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>
